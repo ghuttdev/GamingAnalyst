@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GamingAnalyst</title>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+        <script src="/app.js"></script>
+        <link rel="import" href="components/bower_components/paper-elements/paper-elements.html">
+        <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+        <link rel = "import" href="bower_components/core-header-panel/core-header-panel.html">
+        <link rel="import" href="bower_components/core-icons/core-icons.html">
+        <link rel = "import" href="bower_components/paper-tabs/paper-tabs.html">
+        <link rel = "import" href="bower_components/paper-icon-button/paper-icon-button.html">
+        <link rel = "import" href="bower_components/paper-menu-button/paper-menu-button.html">
+        <link rel = "import" href="bower_components/paper-item/paper-item.html">
+        <link rel = "import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+        <link rel = "import" href="pure-drawer-master/index.html">
+       
+            
+        <style type="text/css">       
+            html, body {
+                height: 100%;
+                margin: 0;
+                background-color: #1f1f1f;
+                font-family: 'RobotoDraft', sans-serif;
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+                
+            }
+            core-header-panel {
+                  background: white;
+                }
+            core-toolbar {
+                background-color: #C2185B;
+                color: white;
+                text-decoration-color: white;
+            }
+            #navheader {
+              background-color: #C2185B;
+            }
+            .content {
+              padding: 20px;
+            }
+            @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+
+        </style>      
+    </head>
+    
+    <body>
+        <core-drawer-panel id="drawerPanel">
+          <core-header-panel drawer>
+            <core-toolbar id="navheader">
+              <span>Menu</span>
+            </core-toolbar>
+            <core-menu>
+              <core-item label="One">ads</core-item>
+              <core-item label="Two">asd</core-item>
+            </core-menu>
+          </core-header-panel>
+        
+        <core-toolbar class="medium-tall" id="main-header">
+        
+</section>
+            <span flex>Gaming Analyst</span>
+             <paper-icon-button id="morebutton" icon="refresh"></paper-icon-button>
+             <paper-icon-button id="morebutton" icon="more-vert"></paper-icon-button>
+             <paper-tabs class="bottom fit" selected="0">
+                <paper-tab noink>News</paper-tab>
+                <paper-tab noink>All Matches</paper-tab>
+                 <paper-tab noink>My Matches</paper-tab>
+                 <paper-tab noink>Live</paper-tab>
+                 <paper-tab noink>Tournaments</paper-tab>
+            </paper-tabs>
+        </core-toolbar>
+            <div>
+                <!-- CARDS -->
+                </div>
+            </div>
+    </core-drawer-panel>
+        <!-- http://materialdesignblog.com/Material-design-bootstrap-theme/-->
+    <!-- http://mac81.github.io/pure-drawer/documentation.html#setup -->
+    </body>
+</html>
