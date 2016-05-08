@@ -2,7 +2,7 @@
 
 Gaming Analyst is a Web Application that can be used to follow Esports Pro scene. That means that anyone with or without steam login can watch live games, last results, team ranking, and many other things for CS:Global Offensive and DOTA 2.
 
-See a demo at http://ismai.fragmentized.net/~a29991/GamingAnalyst-master
+See a demo at http://ismai.fragmentized.net/~a29991/GamingAnalyst-master/index.php
 
 ##Download
 
