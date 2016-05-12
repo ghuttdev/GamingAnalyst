@@ -26,10 +26,12 @@ This application is not affiliated with Steam/ Valve.
 
 *BETA* 
 All users can only watch a preview of the future news feed.
+Users can see the upcoming updates for tournaments, teams, or even the game.
 
-##...
+
+##CSGO
+CS:GO users are invited to use our WebApp to watch the live games, tournaments, team rankings, and all matches generally.
+They can also select their favorite matches and choose what teams to follow.
 
 ---
-
-For more help on STEAM AUTHENTICATION:
- -Thanks to github.com/SmItH197/SteamAuthentication
+- Thanks to https://github.com/SmItH197/SteamAuthentication;
