@@ -1,8 +1,8 @@
 <?php
-    require ('steamauth/steamauth.php');  
+    require ('steamauth/steamauth.php');
 ?>
 
-<!!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-      
-    <!-- Page styles -->
+    <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
@@ -55,15 +55,6 @@
             
         }
         
-        
-        .img_profile{
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 50%;
-            width: 170px;
-        }
-        
         .personname{
            font-size: 18px;
             font-family: sans-serif;
@@ -79,7 +70,7 @@
           <span class="android-title mdl-layout-title">
             <img class="android-logo-image" src="images/android-logo.png">
           </span>
-          <!-- Add spacer, to align navigation to the right in desktop -->
+
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
@@ -93,11 +84,9 @@
           <!-- Navigation -->
           <div name= "top" class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
-              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="main-pages/csgo.html">CS:GO</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="main-pages/dota2.html">DOTA 2</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase"> 
-                 
-                  <?php
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="csgo.php">CS:GO</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dota2.php">DOTA 2</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase"><?php
                 if(!isset($_SESSION['steamid'])) {
                 echo loginbutton("small");
 	               
@@ -115,7 +104,7 @@
           <span class="android-mobile-title mdl-layout-title">
             <img class="android-logo-image" src="images/android-logo-white.png">
           </span>
-          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" ng-click="getMatches()" id="more-button">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
@@ -130,6 +119,8 @@
           <img class="android-logo-image" src="images/android-logo.png">
         </span>
         <nav class="mdl-navigation">
+            <span class="mdl-navigation__link">
+            
             <?php
                 if(!isset($_SESSION['steamid'])) {
 
@@ -140,27 +131,30 @@
                     include ('steamauth/userInfo.php');
 
                     //Protected content
-                    
+               
                     echo '<img class="img_profile" href="'.$steamprofile['profileurl'].'" src="'.$steamprofile['avatarfull'].'"/><br>';
-                   echo '<a class="personname"><center>' . $steamprofile['personaname']. '</center></a><br>';
+                   echo '<a class="personname"><center>' . $steamprofile['personaname']. '</center></a>';
 
                 }    
             ?>
+            </span>
             <div class="android-drawer-separator"></div>
-            <a class="mdl-navigation__link" href="main-pages/csgo.html">CS:GO</a>
-            <a class="mdl-navigation__link" href="main-pages/dota2.html">DOTA 2</a>
+            <a class="mdl-navigation__link" href="csgo.php">CS:GO</a>
+            <a class="mdl-navigation__link" href="dota2.php">DOTA 2</a>
             <div class="android-drawer-separator"></div>
             <a class="mdl-navigation__link" href="">Settings</a>
             <a class="mdl-navigation__link" href="">About</a>
-            <a class="mdl-navigation__link" href="steamlogin.php">
-            <?php
+            <a class="mdl-navigation__link">
+              <?php
                 if(!isset($_SESSION['steamid'])) {
+
                 }  else {
                     include ('steamauth/userInfo.php');
-                    logoutbutton();
+
+                   echo '<a class="personname"><center>' . logoutbutton() . '</center></a>';
+
                 }    
-            ?>    
-		</a>
+            ?></a>
         </nav>
       </div>
       
@@ -174,8 +168,8 @@
               
             <div class="bg">
             <div class="choose-game">
-                <a href="main-pages/csgo.html"><img class="imgs" alt="CS:GO" src="images/cs-go-img.png"/></a>
-                <a href="main-pages/dota2.html"><img class="imgs" alt="DOTA 2" src="images/dota-2-img.jpg" href="/main-pages/dota2.html"/></a>
+                <a href="csgo.php"><img class="imgs" alt="CS:GO" src="images/cs-go-img.png"/></a>
+                <a href="dota2.php"><img class="imgs" alt="DOTA 2" src="images/dota-2-img.jpg" href="/main-pages/dota2.html"/></a>
             </div>
         </div>
             

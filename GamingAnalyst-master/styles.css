@@ -1,3 +1,14 @@
+.img_profile{
+ display: block;
+ margin: 0 auto;
+ border-radius: 50%;
+ width: 170px;
+}       
+
+.demo-list-three {
+  width: 650px;
+}
+
 
 body {
   margin: 0;
