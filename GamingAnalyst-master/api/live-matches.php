@@ -67,7 +67,7 @@
 	        	color: gray;
                  margin-left:auto; 
                  margin-right:auto;
-                margin-bottom: 20px;
+                 margin-bottom: 20px;
 	        }
 
 	        body{
@@ -155,9 +155,9 @@
             <a href="../dota2.php" class="mdl-navigation__link" >DOTA 2</a>
             <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link">CS: GO</span>
-          <a class="mdl-navigation__link" href="">All Matches</a>
+          <a class="mdl-navigation__link" href="csgo-matches.php">All Matches</a>
           <a class="mdl-navigation__link" href="">My Matches</a>
-          <a class="mdl-navigation__link" href="live-matches.php">Live</a>
+          <a class="mdl-navigation__link" href="">Live</a>
           <a class="mdl-navigation__link" href="">Tournaments</a>
           <a class="mdl-navigation__link" href="">Team Ranking</a>      
           <div class="android-drawer-separator"></div>
@@ -169,9 +169,7 @@
 
                 }  else {
                     include ('../steamauth/userInfo.php');
-
                    echo '<a class="personname"><center>' . logoutbutton() . '</center></a>';
-
                 }    
             ?></a>
         </nav>
@@ -182,7 +180,6 @@
           <div class="logo-font android-slogan">CS: Global Offensive</div>
           <br>
           <br>
-			
             <table class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
               <thead>
                 <tr>
@@ -194,27 +191,15 @@
 	               <th><center>Time</center></th>
 	               <th class="winner-column"><center>Winner</center></th>
 	               <th><center>Status</center></th>
-	               <th><center>Betting Page</center></th>
                 </tr>
               </thead>
               <tbody></tbody>
            </table>
-            
           </div>
-	      
-           
-            
+	               
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<script>
-            //PARA INSERIR NA DB
-            function add(){
-                var xmlhttp;
-                xmlhttp=new XMLHttpRequest();
-                xmlhttp.open("GET", "insert.php?nm"+document.getElementById("add-button").value, false);
-                xmlhttp.send(null);
-            }
-            
 			function sortTable(table, order) {
 				var asc   = order === 'asc',
 					tbody = table.find('tbody');
@@ -240,22 +225,15 @@
 					link = "http://csgolounge.com/match?m=" + key
 					status = live ? "Live" : "Upcoming"
 
-					if(val.result)
-						if(val.result.status == "won")
-							if(val.result.team == 0) {
-								winner = ""
-								winner += team_1_name
-								status = "Closed"
-							}
-							else {
-								winner = ""
-								winner += team_2_name
-								status = "Closed"
-							}
-
-					$("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>" + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" + event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
-    				});
-
+					
+                    if(val.live == true){
+                        console.log(val);
+					   $("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>" + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" +   event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
+                    }
+    				    });
+                
+                     
+                    
 				sortTable($('table'),'desc');
 			});
                 

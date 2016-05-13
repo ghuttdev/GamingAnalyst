@@ -74,7 +74,7 @@
             <nav class="android-navigation mdl-navigation">
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">HOME</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dota2.php">DOTA 2</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase"> 
+                <a class="mdl-typography--text-uppercase"> 
                  
                   <?php
                 if(!isset($_SESSION['steamid'])) {
@@ -135,7 +135,7 @@
             <a href="dota2.php" class="mdl-navigation__link" >DOTA 2</a>
             <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link">CS: GO</span>
-          <a class="mdl-navigation__link" href="/~a29991/GamingAnalyst-master/api/csgo-matches.php">All Matches</a>
+          <a class="mdl-navigation__link" href="">All Matches</a>
           <a class="mdl-navigation__link" href="">My Matches</a>
           <a class="mdl-navigation__link" href="">Live</a>
           <a class="mdl-navigation__link" href="">Tournaments</a>

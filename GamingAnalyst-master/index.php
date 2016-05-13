@@ -1,8 +1,8 @@
 <?php
-    require ('steamauth/steamauth.php');
+    require ('steamauth/steamauth.php');  
 ?>
 
-<!DOCTYPE html>
+<!!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-    <script src='https://code.jquery.com/jquery-2.2.3.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js'></script>     
+      
+    <!-- Page styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
@@ -70,7 +70,7 @@
           <span class="android-title mdl-layout-title">
             <img class="android-logo-image" src="images/android-logo.png">
           </span>
-
+          <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
@@ -86,7 +86,7 @@
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="csgo.php">CS:GO</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dota2.php">DOTA 2</a>
-              <a class="mdl-navigation__link mdl-typography--text-uppercase"><?php
+              <a class="mdl-typography--text-uppercase"><?php
                 if(!isset($_SESSION['steamid'])) {
                 echo loginbutton("small");
 	               
@@ -104,7 +104,7 @@
           <span class="android-mobile-title mdl-layout-title">
             <img class="android-logo-image" src="images/android-logo-white.png">
           </span>
-          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" ng-click="getMatches()" id="more-button">
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
