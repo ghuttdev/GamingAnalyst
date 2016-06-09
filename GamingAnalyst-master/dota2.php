@@ -71,7 +71,7 @@
             <nav class="android-navigation mdl-navigation">
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">HOME</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="csgo.php">CS:GO</a>
-                <a class="mdl-typography--text-uppercase">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase">
 	               <?php
 	                if(!isset($_SESSION['steamid'])) {
 	        	        echo loginbutton("small");
@@ -109,13 +109,11 @@
                 if(!isset($_SESSION['steamid'])) {
 
                     echo "<center>Welcome Guest. Please Login!</center><br>";
-                    echo loginbutton("small"); //login button
+                    echo loginbutton("small");
 
                 }  else {
                     include ('steamauth/userInfo.php');
 
-                    //Protected content
-               
                     echo '<img class="img_profile" href="'.$steamprofile['profileurl'].'" src="'.$steamprofile['avatarfull'].'"/><br>';
                    echo '<a class="personname"><center>' . $steamprofile['personaname']. '</center></a>';
 
@@ -128,7 +126,7 @@
             <a href="csgo.php" class="mdl-navigation__link" >CS:GO</a>
             <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link">DOTA 2</span>
-          <a class="mdl-navigation__link" href="">All Matches</a>
+          <a class="mdl-navigation__link" href="dota2/dota2-matches.php">All Matches</a>
           <a class="mdl-navigation__link" href="">My Matches</a>
           <a class="mdl-navigation__link" href="">Live</a>
           <a class="mdl-navigation__link" href="">Tournaments</a>
@@ -238,7 +236,7 @@ Added alternate UI Main track for Music Packs. </span>
           </div>
         </div>
 
-          
+
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--right-section">
