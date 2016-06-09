@@ -56,7 +56,7 @@
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="/~a29991/GamingAnalyst-master/images/android-logo.png">
+            <img class="android-logo-image" src="images/android-logo.png">
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -74,7 +74,7 @@
             <nav class="android-navigation mdl-navigation">
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="index.php">HOME</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dota2.php">DOTA 2</a>
-                <a class="mdl-typography--text-uppercase"> 
+                <a class=" mdl-navigation__link mdl-typography--text-uppercase"> 
                  
                   <?php
                 if(!isset($_SESSION['steamid'])) {
@@ -93,7 +93,7 @@
               </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="/~a29991/GamingAnalyst-master/images/android-logo.png">
+            <img class="android-logo-image" src="images/android-logo.png">
           </span>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
@@ -107,7 +107,7 @@
 
         <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <img class="android-logo-image" src="/~a29991/GamingAnalyst-master/images/android-logo-white.png">
+          <img class="android-logo-image" src="images/android-logo-white.png">
         </span>
         <nav class="mdl-navigation">
              <span class="mdl-navigation__link">
@@ -135,9 +135,9 @@
             <a href="dota2.php" class="mdl-navigation__link" >DOTA 2</a>
             <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link">CS: GO</span>
-          <a class="mdl-navigation__link" href="">All Matches</a>
+          <a class="mdl-navigation__link" href="api/csgo-matches.php">All Matches</a>
           <a class="mdl-navigation__link" href="">My Matches</a>
-          <a class="mdl-navigation__link" href="">Live</a>
+          <a class="mdl-navigation__link" href="api/live-matches.php">Live</a>
           <a class="mdl-navigation__link" href="">Tournaments</a>
           <a class="mdl-navigation__link" href="">Team Ranking</a>      
           <div class="android-drawer-separator"></div>
@@ -171,7 +171,7 @@
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/cs-more-from-1.png">
+                <img src="images/cs-more-from-1.png">
               </div>
                <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Na`Vi to semis over TyLoo</h4>
@@ -189,7 +189,7 @@
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/cs-more-from-2.png">
+                <img src="images/cs-more-from-2.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">EnVyUs edge out Tempo Storm</h4>
@@ -207,7 +207,7 @@
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/cs-more-from-3.png">
+                <img src="images/cs-more-from-3.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">NiP send Astralis packing</h4>
@@ -225,7 +225,7 @@
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/cs-more-from-4.png">
+                <img src="images/cs-more-from-4.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">TyLoo stun Luminosity in Malmö</h4>

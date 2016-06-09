@@ -196,15 +196,15 @@
             <table class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
               <thead>
                 <tr>
-                <th><center>Team A</center></th>
-                <th><center>Odds</center></th>                   
-                <th><center>Odds</center></th>
-	              <th><center>Team B</center></th>
-	              <th><center>Event</center></th>
-	              <th><center>Time</center></th>
-	              <th><center>Winner</center></th>
-	               <th><center>Status</center></th>
-	               <th><center>Betting Page</center></th>
+                <th name="team_1_name"><center>Team A</center></th>
+                <th name="team_1_percent"><center>Odds</center></th>
+                <th name="team_2_percent"><center>Odds</center></th>
+	              <th name="team_1_name"><center>Team B</center></th>
+	              <th name="event"><center>Event</center></th>
+	              <th name="time"><center>Time</center></th>
+	              <th name="winner"><center>Winner</center></th>
+	               <th name="live"><center>Status</center></th>
+	               <th name="link"><center>Betting Page</center></th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -287,13 +287,36 @@
                   status = "Closed"
                 }
 
-            $("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>"  + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" + event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
+            $("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>"  + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" + event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "<td><td>" + '<button name="addFavorite" class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect"><i class="material-icons">favorite border</i></button>' + "</td></tr>")
               });
 
           sortTable($('table'),'desc');
         });
       </script>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-
+        
+    <?php
+        
+        if (isset($_POST['addFavorite'])){
+         
+		$team_1_name = $_POST['team_1_name'];
+        $team_1_percent = $_POST['team_1_percent'];
+		$team_2_percent = $_POST['team_2_percent'];
+		$team_2_name = $_POST['team_2_name'];
+        $event = $_POST['$event'];
+        $time = $_POST['$time'];
+        $winner = $_POST['$winner'];
+        $live = $_POST['$live'];
+        $link = $_POST['link'];
+        $user = $steamprofile['steamid']; 
+            
+        $query = "INSERT INTO `matches` (`teamA`, `oddA`, `oddB`, `teamB`, `event`, `time`, `winner`, `status`, `betting_page`, `user_id`) VALUES ($team_1_name', '$team_1_percent', '$team_2_percent', '$team_2_name', '$event', '$time', '$winner', '$live', '$link', '$user')";
+        $result = mysql_query($query);
+        if($result){
+            echo "<div class='form'><h3 class='warning'>You are now following this game!</h3><br/>Click here to <a href='api/csgo-matches.php'>View Your Matches</a></div>";
+        }
+    }
+    else{}
+?>
 	</body>
 </html>

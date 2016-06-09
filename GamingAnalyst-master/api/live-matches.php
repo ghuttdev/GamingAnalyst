@@ -191,6 +191,7 @@
 	               <th><center>Time</center></th>
 	               <th><center>Winner</center></th>
 	               <th><center>Status</center></th>
+                   <th><center>Betting Page</center></th>
                 </tr>
               </thead>
               <tbody></tbody>

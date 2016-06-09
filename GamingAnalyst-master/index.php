@@ -37,11 +37,15 @@
         
         .bg{
             background: rgba(10,20,30,.1);
-            position: absolute;
             margin-top: 90px;
-            width: 1600px;
             height: 250px;
             border-radius: 2px;
+            position: absolute;
+            left:0;
+            right:0;
+            margin-left:auto;
+            margin-right:auto;
+
         }
 
         .imgs{
@@ -175,7 +179,8 @@
             
           <div class="logo-font android-create-character">
             <a><img src="images/andy.png"> Choose Your Game</a>
-          </div>      
+          </div> 
+          </div>     
         <footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--right-section">
@@ -184,9 +189,8 @@
                 <i class="material-icons">expand_less</i>
               </a>
             </div>
-          </div>
-
-          <div class="mdl-mega-footer--middle-section">
+          </div> 
+           <div class="mdl-mega-footer--middle-section">
             <p class="mdl-typography--font-light">© 2016 ISMAI</p>
           </div>
           <div class="mdl-mega-footer--bottom-section">
@@ -202,9 +206,8 @@
           </div>
             
         </footer>
-      </div>
     </div>
-      </div>
+    </div>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
   </body>
 </html>

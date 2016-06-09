@@ -38,6 +38,10 @@
               word-wrap: break-word;
           }
           
+          .tab-color{
+            background-color: #666666;
+          }
+
           .bg{
               background: rgba(10,20,30,.1);
               position: absolute;
@@ -92,6 +96,7 @@
              padding: 10px;
              width: 40%;
           }
+
 
       </style>
     </head>
@@ -169,6 +174,7 @@
                 }    
             ?>
             </span>
+           </span>
              <div class="android-drawer-separator"></div>
             <a href="../index.php" class="mdl-navigation__link" >Home</a>
             <a href="../csgo.php" class="mdl-navigation__link" >CS:GO</a>
@@ -199,72 +205,49 @@
         <a name="top"></a>
         <div class="mdl-typography--text-center">
           <div class="logo-font android-slogan">DOTA2</div>
+          </br>
+          </br>
           
        <!-- ========================= GosuGamers Tab ========================= -->
-        <div id="gg_acc_matches" class="title-center">
-          <br>
-          <br>
-          <ul class="demo-list-three mdl-list">
-            <li class="mdl-list__item mdl-list__item--three-line active">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-avatar">event</i>
-                <span data-link="http://www.gosugamers.net/dota2/gosubet"> Upcoming Matches</span>
-                <span class="mdl-list__item-text-body">
-                  Here you can follow the Upcoming Matches for the Pro Scene League. 
-                  Click on the game for betting.
-                </span>
-              </span>
-            </li>
-          </ul>
+        <div id="gg_acc_matches" class="title-center" >
+         
+    <div class="tab-pane alignborder" id="streams_vods">
+      <ul class="nav nav-tabs">
+        <li class="active"><a class="submenu sub-tabs-top ph-tabstop ph-tableft" data-toggle="tab" href="#streams">Live Streams &nbsp;<span title="Go to: http://www.twitch.tv/directory/game/Dota%202" data-link="http://www.twitch.tv/directory/game/Dota%202" href="#" class="permalink"></span></a></li>
+            <li><a class="submenu sub-tabs-top tab-color ph-tabstop" data-toggle="tab" href="#dota2vods">VODs &nbsp;<span title="Go to: http://www.dotacinema.com/vods" data-link="http://www.dotacinema.com/vods" href="#" class="permalink"></span></a></li>
+      </ul>
 
-          <div class="">
-            <div class="" id="tb-ggummatch">
-              <table id="gg_matchList" class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
-                <tbody class="listload" id="tbody_ggUpMatches">
-                <thead>
-                  <tr>
-                    <th><center>Status</center></th>
-                    <th><center>Team A</center></th>                   
-                    <th><center></center></th>
-                    <th><center>Team B</center></th> 
-                  </tr>
-                </thead>
-                  <tr class="gif"></tr>
-                </tbody>
-              </table>
-            </div>
-            <div id="gg_acc_matches">
-          <br>
-          <br>
-          <ul class="demo-list-three mdl-list">
-            <li class="mdl-list__item mdl-list__item--three-line active">
-              <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-avatar">face</i>
-                <span> Latest Results</span>
-                <span class="mdl-list__item-text-body">
-                  Here you can watch the Latest Results for the Pro Scene League. 
-                  Click on the game for details.
-                </span>
-              </span>
-            </li>
-          </ul>
-            <div class="tab-pane" id="tb-ggrrmatch" class="title-center">
-              <table id="gg_finishedList" class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
-              <thead>
-                  <tr>
-                    <th><center>Result</center></th>
-                    <th><center>Team A</center></th>                   
-                    <th><center>Winner</center></th>
-                    <th><center>Team B</center></th> 
-                  </tr>
-                </thead>
-                <tbody class="listload" id="tbody_ggReMatches">
-                </tbody>
-              </table>
-            </div>
-          </div>
+      <div class="tab-content">
+        <div class="tab-pane active" id="streams">
+          <table id="streamList" class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
+           <thead>
+                <tr>
+                <th><center>Stream Avatar</center></th>
+                <th><center>Stream</center></th>                   
+                <th><center>Spectators</center></th>
+                </tr>
+              </thead>
+            <tbody class="listload" id="tbody_streams"><center>
+              <tr class="gif"></tr>
+           </center></tbody>
+          </table>
         </div>
+        <div class="tab-pane" id="dota2vods">
+          <table id="d2vodsList" class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+                <tr>
+                <th><center>Time</center></th>
+                <th><center>Match</center></th>                   
+                <th><center>Best Of</center></th>
+                </tr>
+              </thead>
+            <tbody class="listload" id="tbody_d2vods">
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
+  </div>
 
   </div>
   <footer class="android-footer mdl-mega-footer">

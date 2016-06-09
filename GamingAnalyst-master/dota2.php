@@ -55,7 +55,7 @@
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="/~a29991/GamingAnalyst-master/images/android-logo.png" href="index.php">
+            <img class="android-logo-image" src="images/android-logo.png" href="index.php">
           </span>
           <div class="android-header-spacer mdl-layout-spacer"></div>
           <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
@@ -86,7 +86,7 @@
               </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="/~a29991/GamingAnalyst-master/images/android-logo.png">
+            <img class="android-logo-image" src="images/android-logo.png">
           </span>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
@@ -100,7 +100,7 @@
 
         <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <img class="android-logo-image" src="/~a29991/GamingAnalyst-master/images/android-logo-white.png">
+          <img class="android-logo-image" src="images/android-logo-white.png">
         </span>
         <nav class="mdl-navigation">
              <span class="mdl-navigation__link">
@@ -128,7 +128,7 @@
           <span class="mdl-navigation__link">DOTA 2</span>
           <a class="mdl-navigation__link" href="dota2/dota2-matches.php">All Matches</a>
           <a class="mdl-navigation__link" href="">My Matches</a>
-          <a class="mdl-navigation__link" href="">Live</a>
+          <a class="mdl-navigation__link" href="dota2/dota2-streams.php">Streams and Vods</a>
           <a class="mdl-navigation__link" href="">Tournaments</a>
           <a class="mdl-navigation__link" href="">Team Ranking</a>      
           <div class="android-drawer-separator"></div>
@@ -163,7 +163,7 @@
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/more-from-1.png">
+                <img src="images/more-from-1.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Update - April 14th, 2016</h4>
@@ -181,7 +181,7 @@
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/more-from-4.png">
+                <img src="images/more-from-4.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Update - April 13th, 2016</h4>
@@ -199,7 +199,7 @@
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/more-from-2.png">
+                <img src="images/more-from-2.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">Update - April 12th, 2016</h4>
@@ -218,7 +218,7 @@ Added alternate UI Main track for Music Packs. </span>
 
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="/~a29991/GamingAnalyst-master/images/more-from-3.png">
+                <img src="images/more-from-3.png">
               </div>
               <div class="mdl-card__title">
                  <h4 class="mdl-card__title-text">April 5th 2016</h4>
