@@ -21,6 +21,7 @@
 	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
 	    <link rel="stylesheet" href="../styles.css">
+
 	    <style>
 	    #view-source {
 	      position: fixed;
@@ -57,6 +58,13 @@
 	            
 	        }
 	        
+          .team_logos{
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50px;
+          }
+
 	        .personname{
 	           font-size: 18px;
 	            font-family: sans-serif;
@@ -70,9 +78,11 @@
                 margin-bottom: 20px;
 	        }
 
+          
 	        body{
 	         background-color: white;
 	        }
+
 
 	    </style>
 	  </head>
@@ -186,13 +196,13 @@
             <table class="mdl-data-table table-dark mdl-js-data-table mdl-shadow--2dp">
               <thead>
                 <tr>
-                   <th><center>Team A</center></th>
-                    <th><center>Odds</center></th>                   
-                    <th><center>Odds</center></th>
-	               <th><center>Team B</center></th>
-	               <th><center>Event</center></th>
-	               <th><center>Time</center></th>
-	               <th class="winner-column"><center>Winner</center></th>
+                <th><center>Team A</center></th>
+                <th><center>Odds</center></th>                   
+                <th><center>Odds</center></th>
+	              <th><center>Team B</center></th>
+	              <th><center>Event</center></th>
+	              <th><center>Time</center></th>
+	              <th><center>Winner</center></th>
 	               <th><center>Status</center></th>
 	               <th><center>Betting Page</center></th>
                 </tr>
@@ -206,60 +216,7 @@
             
 		<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-		<script>
-            //PARA INSERIR NA DB
-            function add(){
-                var xmlhttp;
-                xmlhttp=new XMLHttpRequest();
-                xmlhttp.open("GET", "insert.php?nm"+document.getElementById("add-button").value, false);
-                xmlhttp.send(null);
-            }
-            
-			function sortTable(table, order) {
-				var asc   = order === 'asc',
-					tbody = table.find('tbody');
-
-				tbody.find('tr').sort(function(a, b) {
-					if (asc) return $('td:last', a).text().localeCompare($('td:last', b).text());
-					else return $('td:last', b).text().localeCompare($('td:last', a).text());
-				}).appendTo(tbody);
-			}
-
-			$.getJSON("./api.php", function(data) {
-				$.each(data, function(key, val) {
-					var live, time, team_1, team_2, winner, team_1_name, team_2_name, event, team_1_percent, team_2_percent
-
-					live = val.live
-					event = val.event
-					winner = "TBD"
-					time = val.time
-					team_1_name = val.teams[0].name
-					team_2_name = val.teams[1].name
-                    team_1_percent = val.teams[0].percent
-                    team_2_percent = val.teams[1].percent
-					link = "http://csgolounge.com/match?m=" + key
-					status = live ? "Live" : "Upcoming"
-
-					if(val.result)
-						if(val.result.status == "won")
-							if(val.result.team == 0) {
-								winner = ""
-								winner += team_1_name
-								status = "Closed"
-							}
-							else {
-								winner = ""
-								winner += team_2_name
-								status = "Closed"
-							}
-
-					$("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>" + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" + event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
-    				});
-
-				sortTable($('table'),'desc');
-			});
-                
-		</script>
+		
 
  		<footer class="android-footer mdl-mega-footer">
           <div class="mdl-mega-footer--top-section">
@@ -289,7 +246,53 @@
         </footer>
       </div>
     </div>
-        
+        <script>
+                      
+        function sortTable(table, order) {
+          var asc   = order === 'asc',
+            tbody = table.find('tbody');
+
+          tbody.find('tr').sort(function(a, b) {
+            if (asc) return $('td:last', a).text().localeCompare($('td:last', b).text());
+            else return $('td:last', b).text().localeCompare($('td:last', a).text());
+          }).appendTo(tbody);
+        }
+
+        $.getJSON("./api.php", function(data) {
+          $.each(data, function(key, val) {
+            var live, time, team_1, team_2, winner, team_1_name, team_2_name, event, team_1_percent, team_2_percent
+
+            live = val.live
+            event = val.event
+            winner = "TBD"
+            time = val.time
+            team_1_name = val.teams[0].name
+            team_2_name = val.teams[1].name
+            team_1_percent = val.teams[0].percent
+            team_2_percent = val.teams[1].percent
+            link = "http://csgolounge.com/match?m=" + key
+            
+            status = live ? "Live" : "Upcoming"
+
+            if(val.result)
+              if(val.result.status == "won")
+                if(val.result.team == 0) {
+                  winner = ""
+                  winner += team_1_name
+                  status = "Closed"
+                }
+                else {
+                  winner = ""
+                  winner += team_2_name
+                  status = "Closed"
+                }
+
+            $("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>"  + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" + event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
+              });
+
+          sortTable($('table'),'desc');
+        });
+      </script>
     <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
 	</body>

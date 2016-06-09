@@ -23,7 +23,7 @@ function strip_tags_content($text, $tags = '', $invert = FALSE) {
 	return $text;
 }
 
-foreach($html->find('.matchmain') as $match) {
+	foreach($html->find('.matchmain') as $match) {
 	$when = $match->find('.whenm')[0];
 	$status = trim($when->find('span')[0]->plaintext) == "LIVE" ? true : false;
 	$event = $match->find('.eventm')[0]->plaintext;

@@ -2,7 +2,7 @@
     require ('steamauth/steamauth.php');  
 ?>
 
-<!!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -86,7 +86,7 @@
             <nav class="android-navigation mdl-navigation">
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="csgo.php">CS:GO</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="dota2.php">DOTA 2</a>
-              <a class="mdl-typography--text-uppercase"><?php
+              <a class="mdl-navigation__link mdl-typography--text-uppercase"><?php
                 if(!isset($_SESSION['steamid'])) {
                 echo loginbutton("small");
 	               

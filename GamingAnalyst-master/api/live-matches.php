@@ -108,8 +108,8 @@
 	           
                   echo "Welcome, " . $steamprofile['personaname']
                ?>  		
-		<?php
-		}    
+	       	<?php
+		      }    
 		?></a>
                 
             </nav>
@@ -189,7 +189,7 @@
 	               <th><center>Team B</center></th>
 	               <th><center>Event</center></th>
 	               <th><center>Time</center></th>
-	               <th class="winner-column"><center>Winner</center></th>
+	               <th><center>Winner</center></th>
 	               <th><center>Status</center></th>
                 </tr>
               </thead>
@@ -226,14 +226,10 @@
 					status = live ? "Live" : "Upcoming"
 
 					
-                    if(val.live == true){
-                        console.log(val);
-					   $("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>" + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" +   event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
+          if(val.live == true){
+					   $("tbody").html($("tbody").html() + "<tr><td>" + team_1_name + "</td><td>" + team_1_percent + "</td><td>" + team_2_percent + "</td><td>"+ team_2_name + "</td><td>" + event + "</td><td>"  + time + "</td><td>" + winner + "</td><td>" + status + "</td><td>" + link + "</td></tr>")
                     }
-    				    });
-                
-                     
-                    
+    				    });                    
 				sortTable($('table'),'desc');
 			});
                 
